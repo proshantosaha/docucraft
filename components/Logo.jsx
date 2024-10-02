@@ -6,7 +6,7 @@ const Logo = () => {
     <div className="hidden lg:flex">
       <Link href="/">
         <Image
-          src="./logo.svg"
+          src="/logo.svg"
           alt="logo"
           className="h-6 w-auto"
           width={100}
