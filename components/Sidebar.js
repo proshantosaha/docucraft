@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Sidebar = ({ docs }) => {
@@ -25,30 +26,16 @@ const Sidebar = ({ docs }) => {
           </a>
           <ul role="list">
             {/* style="opacity: 1" */}
-            <li>
-              <a
-                className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-                href="/docs#guides"
-              >
-                <span className="truncate">Guides</span>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-                href="/docs#resources"
-              >
-                <span className="truncate">Resources</span>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-                href="/docs#test"
-              >
-                <span className="truncate">Test</span>
-              </a>
-            </li>
+            {roots.map((rootNode) => (
+              <li key={rootNode.id} className="relative">
+                <Link
+                  className="flex justify-between gap-2 py-1 pl-7 pr-3 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                  href={`docs/${rootNode.id}`}
+                >
+                  <span class="truncate">{rootNode.title}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </li>
       </ul>
