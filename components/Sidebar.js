@@ -5,6 +5,13 @@ const Sidebar = ({ docs }) => {
 
   console.log({ roots });
 
+  const nonRoots = Object.groupBy(
+    docs.filter((doc) => doc.parent),
+    ({ parent }) => parent
+  );
+
+  console.log({ nonRoots });
+
   return (
     <nav className="hidden lg:mt-10 lg:block">
       <ul role="list" className="border-l border-transparent">
