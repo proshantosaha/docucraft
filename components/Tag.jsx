@@ -6,7 +6,7 @@ export const Tag = ({ tag }) => {
     <Link
       className="bg-gray-200 p-1 rounded-md mr-2 text-xs"
       key={tag}
-      href={`/tag/${tag}`}
+      href={`/tags/${tag}`}
     >
       {tag}
     </Link>
