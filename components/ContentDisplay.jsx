@@ -23,7 +23,7 @@ const ContentDisplay = async ({ id }) => {
         {documentContent.tags &&
           documentContent.tags.map((tag) => <Tag key={tag} tag={tag} />)}
       </div>
-      <di
+      <div
         className="lead"
         dangerouslySetInnerHTML={{ __html: documentContent.contentHtml }}
       />
